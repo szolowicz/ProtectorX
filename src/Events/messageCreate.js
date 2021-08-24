@@ -13,5 +13,9 @@ module.exports = new Event("messageCreate", (client, message) => {
 
   if (!command) return message.reply("`❌ Invalid command!`")
 
+  const permission = message.member.permissions.has(command.permission)
+
+  if (!permission) return message.reply(`\`❌ You don't have the permission ${command.permission} to run this command!\``)
+
   command.run(message, args, client)
 })

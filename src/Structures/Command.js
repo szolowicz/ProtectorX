@@ -7,6 +7,7 @@ class Command {
   constructor(options) {
     this.name = options.name
     this.description = options.description
+    this.permission = options.permission
     this.run = options.run
   }
 }
