@@ -9,7 +9,7 @@ const fs = require("fs")
 
 class Client extends Discord.Client {
   constructor() {
-    super({ intents })
+    super({ intents, allowedMentions: { repliedUser: false } })
 
     this.commands = new Discord.Collection()
     this.prefix = config.prefix
