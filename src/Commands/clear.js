@@ -16,7 +16,7 @@ module.exports = new Command({
     if (amountParsed > 100)
       return message.reply("`❌ You cannot clear more than 100 messages!`")
     
-    message.channel.bulkDelete(amountParsed + 1)
+    message.channel.bulkDelete((amountParsed + 1), true)
 
     const msg = await message.channel.send(`\`❎ Cleared ${amountParsed} messages!\``)
 
