@@ -20,6 +20,8 @@ module.exports = new Command({
 
     if (member === message.author) return message.channel.send("`❌ You cannot kick yourself!`")
 
+    if (message.member.permissions.has("ADMINISTRATOR")) return message.channel.send("`❌ You cannot kick Admin serwer!`")
+    
     if (args[1]) {
       if (args[2]) {
         const reason = args.slice(2).join(' ')
