@@ -12,7 +12,6 @@ module.exports = new Command({
       return message.reply(`\`${time == undefined ? "✖️ Enter a time in seconds!" : `❌ ${time} is an invalid number!`}\``)
 
     message.channel.setRateLimitPerUser(time, "No Reason")
-
     message.channel.send(`\`❎ Successfully set the slowmode on this channel ${time} seconds!\``)
   }
 })
