@@ -13,6 +13,6 @@ module.exports = new Command({
     channel.setPosition(position)
 
     const msg = await channel.send("`❎💥 This channel has been destroyed! 😎`\nhttps://imgur.com/LIyGeCR")
-    setTimeout(() => msg.delete(), 7000)
+    setTimeout(() => msg.delete(), 4000)
   }
 })
