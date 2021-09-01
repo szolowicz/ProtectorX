@@ -4,7 +4,7 @@ const Event = require(`../Structures/Event.js`)
 module.exports = new Event("messageUpdate", async(client, oldMessage, newMessage) => {
   const LogChannel = client.channels.cache.find(c => c.name == "║🤖║bot-test")
   
-  if (!LogChannel) return
+  if (!LogChannel || oldMessage.author.bot || newMessage.author.bot) return
 
   const EditedLog = new Discord.MessageEmbed()
   
