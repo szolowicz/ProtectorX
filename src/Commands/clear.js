@@ -19,7 +19,6 @@ module.exports = new Command({
     message.channel.bulkDelete((amountParsed + 1), true)
 
     const msg = await message.channel.send(`\`❎ Cleared ${amountParsed} messages!\``)
-
-    setTimeout(() => msg.delete(), 5000)
+    setTimeout(() => msg.delete(), 2500)
   }
 })
