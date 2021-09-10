@@ -1,10 +1,9 @@
 {
   "name": "protectorx",
   "version": "1.0.0",
-  "description": "Discord Bot",
+  "description": "discord bot",
   "main": "./src/index.js",
   "scripts": {
-    "dev": "node ./src/index.js",
     "w": "nodemon ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,8 +16,7 @@
     "discord-bot",
     "discord-js",
     "node-js",
-    "javascript",
-    "bot"
+    "javascript"
   ],
   "author": "Adrian Łepek Adriks",
   "license": "MIT",
@@ -28,6 +26,7 @@
   "homepage": "https://github.com/AdriksOwy/ProtectorX#readme",
   "dependencies": {
     "discord.js": "^13.1.0",
-    "node": "16.6.1"
+    "ms": "^2.1.3",
+    "nodemon": "^2.0.12"
   }
 }
