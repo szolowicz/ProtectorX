@@ -12,7 +12,7 @@ module.exports = new Command({
   permission: "BAN_MEMBERS",
 
   async run(message, args, client) {
-    const member = message.mentions.users.first()
+    const member = message.mentions.members.first()
 
     if (!args[1]) return message.channel.send("`❌ You forgot to enter user!`")
 
@@ -20,7 +20,7 @@ module.exports = new Command({
 
     if (member === message.author) return message.channel.send("`❌ You cannot ban yourself!`")
 
-    if (message.member.permissions.has("ADMINISTRATOR")) return message.channel.send("`❌ You cannot ban Admin serwer!`")
+    if (member.permissions.has("ADMINISTRATOR")) return message.channel.send("`❌ You cannot ban Admin serwer!`")
 
     if (args[1]) {
       if (args[2]) {
