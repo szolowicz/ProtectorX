@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 const Event = require(`../Structures/Event.js`)
 
 module.exports = new Event("messageDelete", (client, message) => {
-  const LogChannel = client.channels.cache.find(c => c.name == "║🤖║bot-test")
+  const LogChannel = client.channels.cache.find(c => c.name == "👀logiv2")
   
   if (!LogChannel || message.author.bot) return
 
