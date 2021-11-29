@@ -7,12 +7,13 @@ module.exports = new Command({
 
   async run(message, args, client) {
     const userId = args[1]
-
-    if (!userId) return message.channel.send("`❌ Enter the ID to unban!`")
-
-    if (userId === message.author.id) return message.channel.send("`❌ You cannot unban yourself!`")
-
     const bans = await message.guild.bans.fetch()
+
+    if (!userId)
+      return message.channel.send("`❌ Enter the ID to unban!`")
+
+    if (userId === message.author.id)
+      return message.channel.send("`❌ You cannot unban yourself!`")
 
     if (bans.has(userId)) {
       message.guild.members.unban(userId)

@@ -7,12 +7,11 @@ module.exports = new Command({
 
   async run(message, args, client) {
     const amount = args[1]
+    const amountParsed = parseInt(amount)
 
     if (!amount || isNaN(amount))
       return message.reply(`\`❌ ${amount == undefined ? "You didn't enter a number!" : amount + " is an invalid number!"}\``)
     
-    const amountParsed = parseInt(amount)
-
     if (amountParsed > 100)
       return message.reply("`❌ You cannot clear more than 100 messages!`")
     

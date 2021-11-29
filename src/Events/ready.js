@@ -3,6 +3,7 @@ const Event = require(`../Structures/Event.js`)
 module.exports = new Event("ready", (client) => {
   console.log("Bot is online!")
 
+  let number = 0
   const arrayOfStatus = [
     "🤖 Author : Adriks",
     "💻 GitHub : https://github.com/AdriksOwy",
@@ -10,11 +11,10 @@ module.exports = new Event("ready", (client) => {
     "❔help - All bot commands."
   ]
 
-  let index = 0
   setInterval(() => {
-    if (index === arrayOfStatus.length) index = 0
-    const status = arrayOfStatus[index]
+    if (number === arrayOfStatus.length) number = 0
+    const status = arrayOfStatus[number]
     client.user.setActivity(status)
-    index++
+    number++
   }, 3000)
 })

@@ -1,5 +1,4 @@
 const Command = require(`../Structures/Command.js`)
-const ms = require("ms")
 
 module.exports = new Command({
   name: "unmute",
@@ -7,15 +6,18 @@ module.exports = new Command({
   permission: "MANAGE_MESSAGES",
 
   async run(message, args, client) {
+    const muteRoleID = "747584431736356933"
     const member = message.mentions.members.first()
 
     if(member) {
       const memberTarget = message.guild.members.cache.get(member.id)
-      const muteRole = message.guild.roles.cache.find(role => role.id === "854086771535904788")
+      const muteRole = message.guild.roles.cache.find(role => role.id === muteRoleID)
 
-      if (member.permissions.has("ADMINISTRATOR")) return message.channel.send("`❌ You cannot unmute Admin serwer!`")
+      if (member.permissions.has("ADMINISTRATOR"))
+        return message.channel.send("`❌ You cannot use this command on Admin!`")
 
-      if (!(member.roles.cache.some(role => role.id === "854086771535904788"))) return message.channel.send("`❌ This user is already unmuted!`")
+      if (!(member.roles.cache.some(role => role.id === muteRoleID)))
+        return message.channel.send("`❌ This user is already unmuted!`")
 
       if (muteRole) {
         memberTarget.roles.remove(muteRole.id)

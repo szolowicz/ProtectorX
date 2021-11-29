@@ -3,7 +3,7 @@ const Command = require(`../Structures/Command.js`)
 module.exports = new Command({
   name: "slowmode",
   description: "Set slowmode send messages channel!",
-  permission: "ADMINISTRATOR",
+  permission: "MANAGE_MESSAGES",
 
   async run(message, args, client) {
     const time = args[1]

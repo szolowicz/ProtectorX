@@ -13,14 +13,16 @@ module.exports = new Command({
 
   async run(message, args, client) {
     const member = message.mentions.members.first()
-
-    if (!args[1]) return message.channel.send("`❌ You forgot to enter user!`")
-
     args[1] = member
 
-    if (member === message.author) return message.channel.send("`❌ You cannot ban yourself!`")
+    if (!args[1])
+      return message.channel.send("`❌ You forgot to enter user!`")
 
-    if (member.permissions.has("ADMINISTRATOR")) return message.channel.send("`❌ You cannot ban Admin serwer!`")
+    if (member === message.author) 
+      return message.channel.send("`❌ You cannot ban yourself!`")
+
+    if (member.permissions.has("ADMINISTRATOR"))
+      return message.channel.send("`❌ You cannot use this command on Admin!`")
 
     if (args[1]) {
       if (args[2]) {

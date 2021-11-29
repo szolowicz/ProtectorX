@@ -2,11 +2,11 @@ const Discord = require("discord.js")
 const Event = require(`../Structures/Event.js`)
 
 module.exports = new Event("guildMemberAdd", (client, member) => {
-  const channel = member.guild.channels.cache.find(c => c.name == "⛅┇chmurka")
-
-  if (!channel) return
-
+  const channel = member.guild.channels.cache.find(c => c.name === "║🤖║bot-test")
   const embed = new Discord.MessageEmbed()
+
+  if (!channel)
+    return
 
   embed.setTitle("`❎👋 New Member`")
     .setColor("GREEN")

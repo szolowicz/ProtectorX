@@ -15,9 +15,11 @@ module.exports = new Command({
   permission: "",
 
   async run(message, args, client) {
-    if (!args[1]) return message.channel.send("`❌ You forgot to enter two users!`")
+    if (!args[1])
+      return message.channel.send("`❌ You forgot to enter two users!`")
 
-    if (!args[2]) return message.channel.send("`❌ Enter the second user!`")
+    if (!args[2])
+      return message.channel.send("`❌ Enter the second user!`")
 
     if (args[1] || args[2]) {
       const FirstUser = args[1]

@@ -2,11 +2,11 @@ const Discord = require("discord.js")
 const Event = require(`../Structures/Event.js`)
 
 module.exports = new Event("messageUpdate", async(client, oldMessage, newMessage) => {
-  const LogChannel = client.channels.cache.find(c => c.name == "👀logiv2")
-  
-  if (!LogChannel || oldMessage.author.bot || newMessage.author.bot) return
-
+  const LogChannel = client.channels.cache.find(c => c.name === "║🤖║bot-test")
   const EditedLog = new Discord.MessageEmbed()
+
+  if (!LogChannel || oldMessage.author.bot || newMessage.author.bot)
+    return
   
   EditedLog.setTitle("`✖️📝 Edited Message`")
     .setColor("RANDOM")
